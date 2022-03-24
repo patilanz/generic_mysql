@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS `user` (
+  `user_id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(255) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `surname` VARCHAR(45) NULL,
+  `hash` VARCHAR(255) NULL,
+  `suspended` TINYINT NULL DEFAULT 0,
+  `instagram` VARCHAR(255) NULL,
+  `gender` VARCHAR(45) NULL,
+  `nationality` VARCHAR(255) NULL,
+  `phone` VARCHAR(45) NULL,
+  `email_verified` TINYINT NULL DEFAULT 0,
+  `phone_verified` TINYINT NULL DEFAULT 0,
+  `birthday` DATE NULL,
+  `updated_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`user_id`),
+  UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC),
+  UNIQUE INDEX `phone_UNIQUE` (`phone` ASC)
+)
+ENGINE = InnoDB
